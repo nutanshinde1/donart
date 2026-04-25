@@ -6,11 +6,53 @@
 <title>D.O.N ART | Rajeshwar Vivekanand Trimbake</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   IMAGE NAMING GUIDE — put all images in /images/ folder
+   artist-photo.jpg         Hero background (Rajeshwar's photo)
+   logo.png                 Nav logo
+   painting-01.jpg          Me And Nature
+   painting-02.jpg          My Village
+   painting-03.jpg          Dream Girl
+   painting-04.jpg          Good Morning
+   painting-05.jpg          God
+   painting-06.jpg          Spiritual
+   painting-07.jpg          Mashroom
+   painting-08.jpg          My Corners
+   painting-09.jpg          Milk Factory
+   painting-10.jpg          Kurukshetra
+   painting-11.jpg          Human Is An Animal
+   painting-12.jpg          Ticket
+   painting-13.jpg          Eye Heart
+   painting-14.jpg          Donart Symbol
+   painting-15.jpg          Cause Of Pregnancy
+   painting-16.jpg          Mr Brain
+   painting-17.jpg          Snail
+   painting-18.jpg          My Thought Is Pregnant
+   painting-19.jpg          Women
+   painting-20.jpg          Dancing Sperm
+   drawing-01.jpg           Drawing 1 (PDF page 1)
+   drawing-02.jpg           Drawing 2 (PDF page 2)
+   drawing-03.jpg           Drawing 3 (PDF page 3)
+   drawing-04.jpg           Drawing 4 (PDF page 4)
+   drawing-05.jpg           Drawing 5 (PDF page 5)
+   drawing-06.jpg           Drawing 6 (PDF page 6)
+   drawing-07.jpg           Drawing 7 (PDF page 7)
+   drawing-08.jpg           Drawing 8 (PDF page 8)
+   drawing-09.jpg           Drawing 9 (PDF page 9)
+   drawing-10.jpg           Drawing 10 (PDF page 10)
+   drawing-11.jpg           Drawing 11 (PDF page 11)
+   ink-drawings.jpg         Ink on Paper collage
+   earlier-works.jpg        Earlier works collage
+   ============================================================ */
 :root {
   --gold:#e8b923; --gold-l:#ffd60a; --crimson:#c1121f;
   --electric:#00b4d8; --teal:#06d6a0;
-  --dark:#030810; --dark2:#060d1c; --card:rgba(6,13,30,.92);
-  --text:#ededee; --muted:#7a8ca8; --border:rgba(232,185,35,.18);
+  --dark:#030810; --dark2:#060d1c; --card:rgba(6,13,30,.95);
+  /* IMPROVED READABILITY — brighter text values */
+  --text:#f0f0f2;          /* was #ededee — slightly brighter */
+  --text2:#d8dce8;         /* body copy — was var(--muted) at .7a8ca8 which was too dim */
+  --muted:#a0aec0;         /* was #7a8ca8 — boosted for legibility */
+  --border:rgba(232,185,35,.18);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -19,17 +61,20 @@ body{background:var(--dark);color:var(--text);font-family:'Rajdhani',sans-serif;
 #cur{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--gold-l);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .12s,background .3s;mix-blend-mode:difference;}
 #cur-ring{position:fixed;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,214,10,.4);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .18s ease;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:22px 70px;backdrop-filter:blur(18px) saturate(1.4);background:rgba(3,8,16,.7);border-bottom:1px solid var(--border);transition:padding .3s,background .3s;}
-nav.scrolled{padding:14px 70px;background:rgba(3,8,16,.97);}
-.nav-brand{display:flex;flex-direction:column;}
-.nav-brand-main{font-family:'Cinzel Decorative',serif;font-size:1.35rem;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,var(--gold),#fff 40%,var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-brand-sub{font-size:.6rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color .3s;position:relative;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:18px 70px;backdrop-filter:blur(18px) saturate(1.4);background:rgba(3,8,16,.7);border-bottom:1px solid var(--border);transition:padding .3s,background .3s;}
+nav.scrolled{padding:12px 70px;background:rgba(3,8,16,.97);}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo-img{height:42px;width:auto;object-fit:contain;display:block;}
+.nav-brand-txt{display:flex;flex-direction:column;}
+.nav-brand-main{font-family:'Cinzel Decorative',serif;font-size:1.3rem;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,var(--gold),#fff 40%,var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-brand-sub{font-size:.58rem;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color .3s;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:100%;height:1px;background:var(--gold);transition:right .3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a:hover::after{right:0;}
-.nav-cta{padding:10px 28px;background:var(--gold);color:#000;font-weight:700;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:none;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .3s;white-space:nowrap;}
+.nav-cta{padding:10px 24px;background:var(--gold);color:#000;font-weight:800;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:none;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .3s;white-space:nowrap;}
 .nav-cta:hover{background:var(--electric);color:#fff;}
 
 /* HERO */
@@ -39,19 +84,19 @@ nav.scrolled{padding:14px 70px;background:rgba(3,8,16,.97);}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(105deg,rgba(3,8,16,.92) 0%,rgba(3,8,16,.55) 50%,rgba(3,8,16,.2) 100%),linear-gradient(to top,rgba(3,8,16,1) 0%,transparent 50%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,180,216,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,216,.035) 1px,transparent 1px);background-size:70px 70px;}
 .hero-c{position:relative;z-index:10;padding:0 70px;max-width:820px;}
-.hero-eye{display:inline-flex;align-items:center;gap:14px;font-size:.68rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--electric);margin-bottom:28px;opacity:0;animation:fUp .9s .2s forwards;}
+.hero-eye{display:inline-flex;align-items:center;gap:14px;font-size:.7rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--electric);margin-bottom:28px;opacity:0;animation:fUp .9s .2s forwards;}
 .hero-eye::before{content:'';width:40px;height:1px;background:var(--electric);}
 h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;margin-bottom:6px;opacity:0;animation:fUp .9s .5s forwards;}
 .h-don{font-size:clamp(4.5rem,11vw,10rem);color:var(--gold);display:block;letter-spacing:-2px;}
 .h-art{font-size:clamp(4.5rem,11vw,10rem);color:transparent;-webkit-text-stroke:2px var(--crimson);display:block;letter-spacing:8px;}
-.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.4vw,1.5rem);font-style:italic;color:rgba(255,255,255,.75);letter-spacing:4px;margin:22px 0 12px;opacity:0;animation:fUp .9s .8s forwards;}
-.hero-concept{font-size:.8rem;letter-spacing:5px;text-transform:uppercase;color:var(--teal);margin-bottom:50px;opacity:0;animation:fUp .9s 1s forwards;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.4vw,1.5rem);font-style:italic;color:rgba(255,255,255,.88);letter-spacing:4px;margin:22px 0 12px;opacity:0;animation:fUp .9s .8s forwards;}
+.hero-concept{font-size:.82rem;letter-spacing:5px;text-transform:uppercase;color:var(--teal);margin-bottom:50px;opacity:0;animation:fUp .9s 1s forwards;}
 .hero-btns{display:flex;gap:18px;flex-wrap:wrap;opacity:0;animation:fUp .9s 1.3s forwards;}
-.btn-gold{padding:16px 46px;background:var(--gold);color:#000;font-weight:800;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:none;text-decoration:none;display:inline-block;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .3s;}
+.btn-gold{padding:16px 46px;background:var(--gold);color:#000;font-weight:800;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:none;text-decoration:none;display:inline-block;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .3s;}
 .btn-gold:hover{background:var(--electric);color:#fff;transform:translateY(-3px);}
-.btn-ghost{padding:15px 46px;background:transparent;color:var(--text);font-weight:700;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);cursor:none;text-decoration:none;display:inline-block;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .3s;}
+.btn-ghost{padding:15px 46px;background:transparent;color:var(--text);font-weight:700;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,.35);cursor:none;text-decoration:none;display:inline-block;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:all .3s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);}
-.hero-scroll{position:absolute;bottom:44px;left:70px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:.62rem;letter-spacing:4px;text-transform:uppercase;opacity:0;animation:fUp .9s 2s forwards;}
+.hero-scroll{position:absolute;bottom:44px;left:70px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:.64rem;letter-spacing:4px;text-transform:uppercase;opacity:0;animation:fUp .9s 2s forwards;}
 .hero-scroll-line{width:1px;height:55px;background:linear-gradient(to bottom,var(--gold),transparent);}
 .hero-badge{position:absolute;right:70px;bottom:60px;z-index:10;width:120px;height:120px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(3,8,16,.7);backdrop-filter:blur(10px);opacity:0;animation:fUp .9s 1.6s forwards;}
 .hero-badge svg{position:absolute;inset:0;width:100%;height:100%;animation:rBadge 25s linear infinite;}
@@ -64,14 +109,14 @@ h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;m
 /* MARQUEE */
 .mq-wrap{overflow:hidden;padding:18px 0;background:rgba(232,185,35,.04);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .mq-inner{display:flex;gap:50px;white-space:nowrap;animation:mqScroll 22s linear infinite;}
-.mq-inner span{font-family:'Cinzel Decorative',serif;font-size:.72rem;letter-spacing:4px;color:var(--gold);opacity:.55;}
+.mq-inner span{font-family:'Cinzel Decorative',serif;font-size:.72rem;letter-spacing:4px;color:var(--gold);opacity:.65;}
 @keyframes mqScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-/* SECTIONS */
+/* SECTION BASE */
 .sec{position:relative;}
 .sp{padding:110px 70px;}
 .sh{text-align:center;margin-bottom:70px;}
-.sl{font-size:.65rem;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--electric);margin-bottom:14px;}
+.sl{font-size:.67rem;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--electric);margin-bottom:14px;}
 .st{font-family:'Cinzel Decorative',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:700;background:linear-gradient(135deg,var(--gold) 0%,#fff 55%,var(--electric) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px;}
 .sr{width:70px;height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--electric));margin:0 auto;}
 .rv{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease;}
@@ -84,28 +129,37 @@ h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;m
 .acard{padding:3px;background:linear-gradient(135deg,var(--gold),var(--electric),var(--crimson));}
 .acard-in{background:var(--dark2);padding:44px 38px;}
 .an{font-family:'Cinzel Decorative',serif;font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:6px;}
-.adob{font-size:.72rem;letter-spacing:4px;color:var(--muted);margin-bottom:28px;text-transform:uppercase;}
-.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.05);}
+.adob{font-size:.74rem;letter-spacing:4px;color:var(--muted);margin-bottom:28px;text-transform:uppercase;}
+.ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.07);}
 .ci:last-child{border:none;margin:0;padding:0;}
 .ci-ico{width:34px;height:34px;flex-shrink:0;background:rgba(232,185,35,.08);border:1px solid rgba(232,185,35,.25);display:flex;align-items:center;justify-content:center;font-size:.9rem;}
-.ci-l{font-size:.6rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
-.ci-v{font-size:.88rem;color:var(--text);margin-top:3px;line-height:1.6;}
-.aq{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--electric);line-height:1.7;margin-bottom:24px;}
-.ab{font-size:.97rem;color:var(--muted);line-height:1.95;margin-bottom:18px;}
+.ci-l{font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.ci-v{font-size:.92rem;color:var(--text);margin-top:3px;line-height:1.6;}
+.aq{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:#5fd8f0;line-height:1.7;margin-bottom:24px;}
+/* IMPROVED: body text now uses --text2 which is much more readable */
+.ab{font-size:1rem;color:var(--text2);line-height:2;margin-bottom:18px;}
 .stats{display:flex;gap:36px;margin-top:38px;flex-wrap:wrap;}
 .stat .n{font-family:'Cinzel Decorative',serif;font-size:2.4rem;color:var(--gold);display:block;}
-.stat .l{font-size:.65rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+.stat .l{font-size:.67rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
 
-/* GALLERY */
+/* ========================
+   GALLERY — New category tabs
+   ======================== */
 #gallery{background:var(--dark2);}
-.gtabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:56px;}
-.tab{padding:10px 26px;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--muted);font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:none;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);transition:all .3s;}
-.tab:hover,.tab.on{background:var(--gold);color:#000;border-color:var(--gold);}
+.gtabs-outer{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:50px;}
+/* Parent categories */
+.gtabs-parent{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+.tab-parent{padding:11px 28px;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text2);font-family:'Rajdhani',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:none;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);transition:all .3s;}
+.tab-parent:hover,.tab-parent.on{background:var(--gold);color:#000;border-color:var(--gold);}
+/* Sub categories */
+.gtabs-sub{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;min-height:36px;}
+.tab-sub{padding:7px 18px;background:transparent;border:1px solid rgba(0,180,216,.25);color:var(--muted);font-family:'Rajdhani',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:none;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);transition:all .3s;}
+.tab-sub:hover,.tab-sub.on{background:var(--electric);color:#000;border-color:var(--electric);}
 .ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1400px;margin:0 auto;}
 .ggrid .ac.hero-c2{grid-column:span 2;grid-row:span 2;}
 .ggrid .ac.wide-c{grid-column:span 2;}
-.ac{position:relative;overflow:hidden;background:#0a1020;border:1px solid rgba(255,255,255,.07);cursor:none;transition:border-color .4s,box-shadow .4s;}
-.ac:hover{border-color:rgba(232,185,35,.45);box-shadow:0 8px 50px rgba(0,0,0,.6);}
+.ac{position:relative;overflow:hidden;background:#0a1020;border:1px solid rgba(255,255,255,.08);cursor:none;transition:border-color .4s,box-shadow .4s;}
+.ac:hover{border-color:rgba(232,185,35,.5);box-shadow:0 8px 50px rgba(0,0,0,.6);}
 .ac-iw{position:relative;overflow:hidden;}
 .ac-img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .7s ease,filter .5s;filter:saturate(.88) brightness(.92);}
 .ac.hero-c2 .ac-img{height:540px;}
@@ -117,25 +171,77 @@ h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;m
 .hov-t{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#fff;margin-bottom:4px;}
 .hov-p{font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:14px;}
 .hov-btns{display:flex;gap:10px;}
-.bsm{padding:9px 22px;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:none;border:none;transition:all .25s;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);}
+.bsm{padding:9px 22px;font-size:.74rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:none;border:none;transition:all .25s;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);}
 .bsm-g{background:var(--gold);color:#000;}.bsm-g:hover{background:#fff;}
-.bsm-o{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);}.bsm-o:hover{border-color:var(--gold);color:var(--gold);}
-.atag{position:absolute;top:14px;left:14px;z-index:5;padding:5px 14px;font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);}
+.bsm-o{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}.bsm-o:hover{border-color:var(--gold);color:var(--gold);}
+.atag{position:absolute;top:14px;left:14px;z-index:5;padding:5px 14px;font-size:.64rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);}
 .ta{background:var(--teal);color:#000;}.tf{background:var(--gold);color:#000;}.ts{background:#666;color:#fff;}
 .ac-info{padding:16px 18px 20px;}
-.ac-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:5px;}
+.ac-title{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:600;color:var(--text);margin-bottom:5px;}
 .ac-row{display:flex;justify-content:space-between;align-items:center;}
-.ac-med{font-size:.72rem;color:var(--muted);letter-spacing:1px;}
-.ac-price{font-size:.88rem;font-weight:700;color:var(--teal);}
-.ac-size{font-size:.68rem;color:var(--muted);margin-top:3px;}
+.ac-med{font-size:.74rem;color:var(--muted);letter-spacing:1px;}
+.ac-price{font-size:.9rem;font-weight:700;color:var(--teal);}
+.ac-size{font-size:.7rem;color:var(--muted);margin-top:3px;}
 .ac::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--electric));transform:scaleX(0);transform-origin:left;transition:transform .45s;z-index:4;}
 .ac:hover::before{transform:scaleX(1);}
+/* Category pill on card */
+.ac-cat-pill{position:absolute;top:14px;right:14px;z-index:5;padding:4px 10px;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(3,8,16,.75);border:1px solid rgba(255,255,255,.2);color:var(--muted);backdrop-filter:blur(6px);}
+
+/* ========================
+   DRAWINGS SECTION
+   ======================== */
+#drawings{background:linear-gradient(135deg,#030810 0%,#04100a 50%,#030810 100%);}
+.draw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;max-width:1400px;margin:0 auto;}
+.draw-card{position:relative;overflow:hidden;background:#050c08;border:1px solid rgba(6,214,160,.12);cursor:none;transition:border-color .4s,transform .4s,box-shadow .4s;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));}
+.draw-card:hover{border-color:rgba(6,214,160,.5);transform:translateY(-6px);box-shadow:0 16px 60px rgba(0,0,0,.7);}
+.draw-img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .6s ease,filter .5s;filter:saturate(.9) contrast(1.05);}
+.draw-card:hover .draw-img{transform:scale(1.06);filter:saturate(1) contrast(1.1);}
+.draw-fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:4rem;opacity:.35;background:#050c08;}
+.draw-hov{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,16,.97) 0%,rgba(3,8,16,.25) 50%,transparent 75%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;}
+.draw-card:hover .draw-hov{opacity:1;}
+.draw-hov-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#fff;margin-bottom:6px;}
+.draw-hov-m{font-size:.72rem;letter-spacing:2px;color:var(--teal);text-transform:uppercase;}
+.draw-info{padding:16px 18px 20px;}
+.draw-num{font-size:.62rem;letter-spacing:4px;color:var(--teal);text-transform:uppercase;margin-bottom:5px;}
+.draw-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:4px;}
+.draw-med{font-size:.72rem;color:var(--muted);}
+.draw-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--electric));transform:scaleX(0);transform-origin:left;transition:transform .4s;z-index:4;}
+.draw-card:hover::before{transform:scaleX(1);}
+
+/* ========================
+   HISTORY OF ART SECTION
+   ======================== */
+#arthistory{background:linear-gradient(180deg,var(--dark2) 0%,#08101e 50%,var(--dark2) 100%);}
+.hist-intro{max-width:800px;margin:0 auto 70px;text-align:center;}
+.hist-intro p{font-size:1.05rem;color:var(--text2);line-height:2;}
+/* Article tabs */
+.hist-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:50px;}
+.htab{padding:10px 24px;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--text2);font-family:'Rajdhani',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:none;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);transition:all .3s;}
+.htab:hover,.htab.on{background:var(--electric);color:#000;border-color:var(--electric);}
+/* Article cards */
+.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;max-width:1300px;margin:0 auto;}
+.hist-card{background:rgba(0,180,216,.03);border:1px solid rgba(0,180,216,.14);padding:36px 30px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);transition:all .4s;cursor:none;}
+.hist-card:hover{background:rgba(0,180,216,.08);border-color:rgba(0,180,216,.4);transform:translateY(-5px);}
+.hist-card-tag{font-size:.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--electric);margin-bottom:14px;}
+.hist-card-title{font-family:'Cinzel Decorative',serif;font-size:1.15rem;color:var(--gold);margin-bottom:14px;line-height:1.4;}
+.hist-card-body{font-size:.95rem;color:var(--text2);line-height:1.95;margin-bottom:18px;}
+.hist-card-body p{margin-bottom:12px;}
+.hist-card-body h4{font-family:'Cinzel Decorative',serif;font-size:.78rem;color:var(--teal);margin:18px 0 8px;letter-spacing:1px;}
+.hist-read-more{font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--electric);background:none;border:none;cursor:none;padding:0;transition:color .3s;}
+.hist-read-more:hover{color:var(--gold);}
+.hist-card-full{display:none;}
+.hist-card-full.open{display:block;margin-top:16px;border-top:1px solid rgba(0,180,216,.15);padding-top:16px;}
+/* Comparison table */
+.art-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.88rem;}
+.art-table th{font-family:'Cinzel Decorative',serif;font-size:.7rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;padding:10px 12px;border-bottom:1px solid rgba(232,185,35,.25);text-align:left;}
+.art-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--text2);line-height:1.5;}
+.art-table tr:hover td{background:rgba(0,180,216,.04);}
 
 /* CONCEPT */
 #concept{background:linear-gradient(135deg,var(--dark) 0%,#06111f 100%);overflow:hidden;}
 .cpt-bg{position:absolute;font-family:'Cinzel Decorative',serif;font-size:20vw;font-weight:900;color:rgba(232,185,35,.025);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;}
 .cpt-w{max-width:960px;margin:0 auto;text-align:center;position:relative;z-index:2;}
-.cq{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.8vw,1.8rem);font-style:italic;line-height:1.9;color:rgba(255,255,255,.82);margin-bottom:70px;padding:0 40px;position:relative;}
+.cq{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.8vw,1.8rem);font-style:italic;line-height:1.9;color:rgba(255,255,255,.9);margin-bottom:70px;padding:0 40px;position:relative;}
 .cq::before,.cq::after{content:'\201C';position:absolute;font-size:7rem;color:var(--gold);opacity:.15;font-family:'Cinzel Decorative',serif;line-height:1;}
 .cq::before{top:-20px;left:0;}.cq::after{content:'\201D';bottom:-60px;right:0;}
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:80px;}
@@ -143,7 +249,8 @@ h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;m
 .pill:hover{background:rgba(232,185,35,.07);border-color:rgba(232,185,35,.4);transform:translateY(-6px);}
 .p-ico{font-size:2.2rem;margin-bottom:18px;}
 .p-t{font-family:'Cinzel Decorative',serif;font-size:.9rem;color:var(--gold);margin-bottom:12px;letter-spacing:1px;}
-.p-b{font-size:.88rem;color:var(--muted);line-height:1.85;}
+/* IMPROVED: pill body text is now --text2 not --muted */
+.p-b{font-size:.92rem;color:var(--text2);line-height:1.9;}
 
 /* JOURNEY */
 #journey{background:var(--dark2);}
@@ -151,44 +258,49 @@ h1.hero-t{font-family:'Cinzel Decorative',serif;font-weight:900;line-height:.9;m
 .jcol h3{font-family:'Cinzel Decorative',serif;font-size:1.05rem;color:var(--electric);margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid rgba(0,180,216,.2);letter-spacing:2px;}
 .tl{position:relative;padding:0 0 28px 28px;border-left:1px solid rgba(232,185,35,.2);}
 .tl::before{content:'';position:absolute;left:-5px;top:5px;width:8px;height:8px;background:var(--gold);border-radius:50%;box-shadow:0 0 10px var(--gold);}
-.tl-y{font-size:.68rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
-.tl-t{font-size:.97rem;font-weight:600;color:var(--text);margin-bottom:4px;}
-.tl-d{font-size:.84rem;color:var(--muted);line-height:1.65;}
+.tl-y{font-size:.7rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+.tl-t{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:4px;}
+/* IMPROVED: timeline desc brighter */
+.tl-d{font-size:.88rem;color:var(--text2);line-height:1.7;}
 
 /* ACHIEVEMENTS */
 #ach{background:linear-gradient(180deg,var(--dark2) 0%,var(--dark) 100%);}
 .agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;max-width:1200px;margin:0 auto;}
 .acard2{padding:28px 26px;background:rgba(0,180,216,.04);border:1px solid rgba(0,180,216,.14);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);transition:all .4s;}
 .acard2:hover{background:rgba(0,180,216,.09);border-color:rgba(0,180,216,.45);transform:translateY(-4px);}
-.ay{font-size:1.8rem;font-family:'Cinzel Decorative',serif;color:var(--gold);opacity:.45;margin-bottom:8px;}
-.att{font-size:.97rem;font-weight:600;color:var(--text);margin-bottom:7px;}
-.ad{font-size:.83rem;color:var(--muted);line-height:1.7;}
+.ay{font-size:1.8rem;font-family:'Cinzel Decorative',serif;color:var(--gold);opacity:.5;margin-bottom:8px;}
+.att{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:7px;}
+/* IMPROVED */
+.ad{font-size:.88rem;color:var(--text2);line-height:1.75;}
 
 /* CTA BAND */
 .ctaband{padding:90px 70px;text-align:center;background:linear-gradient(135deg,rgba(193,18,31,.15) 0%,rgba(0,180,216,.12) 50%,rgba(232,185,35,.12) 100%),var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
 .ctaband::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(255,255,255,.012) 8px,rgba(255,255,255,.012) 9px);}
 .ctaband h2{font-family:'Cinzel Decorative',serif;font-size:clamp(1.6rem,4vw,3rem);color:#fff;margin-bottom:16px;position:relative;}
-.ctaband p{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--muted);margin-bottom:40px;position:relative;}
+/* IMPROVED: CTA paragraph brighter */
+.ctaband p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--text2);margin-bottom:40px;position:relative;}
 .cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;position:relative;}
 
 /* CONTACT */
 #contact{background:var(--dark);}
 .cont-w{max-width:1000px;margin:0 auto;}
-.ctag{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--muted);text-align:center;margin-bottom:60px;}
+/* IMPROVED */
+.ctag{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--text2);text-align:center;margin-bottom:60px;}
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px;}
 .cc{padding:30px 22px;text-align:center;background:rgba(232,185,35,.03);border:1px solid var(--border);clip-path:polygon(9px 0%,100% 0%,calc(100% - 9px) 100%,0% 100%);transition:all .35s;}
 .cc:hover{background:rgba(232,185,35,.08);border-color:var(--gold);transform:translateY(-4px);}
 .cc-ico{font-size:1.9rem;margin-bottom:14px;}
-.cc-l{font-size:.62rem;letter-spacing:3px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;}
-.cc-v{font-size:.86rem;color:var(--text);line-height:1.6;}
-.caddr{padding:28px 32px;background:rgba(0,180,216,.04);border:1px solid rgba(0,180,216,.18);text-align:center;font-size:.93rem;color:var(--muted);line-height:2.1;margin-bottom:44px;}
+.cc-l{font-size:.64rem;letter-spacing:3px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;}
+/* IMPROVED */
+.cc-v{font-size:.9rem;color:var(--text);line-height:1.7;}
+.caddr{padding:28px 32px;background:rgba(0,180,216,.04);border:1px solid rgba(0,180,216,.18);text-align:center;font-size:.96rem;color:var(--text2);line-height:2.2;margin-bottom:44px;}
 .caddr strong{display:block;font-size:.65rem;letter-spacing:3px;color:var(--electric);margin-bottom:10px;text-transform:uppercase;}
-.insta-a{display:inline-flex;align-items:center;gap:12px;padding:16px 42px;background:linear-gradient(135deg,#fd5949,#d6249f,#285aeb);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(9px 0%,100% 0%,calc(100% - 9px) 100%,0% 100%);transition:all .3s;}
+.insta-a{display:inline-flex;align-items:center;gap:12px;padding:16px 42px;background:linear-gradient(135deg,#fd5949,#d6249f,#285aeb);color:#fff;font-weight:700;font-size:.84rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(9px 0%,100% 0%,calc(100% - 9px) 100%,0% 100%);transition:all .3s;}
 .insta-a:hover{filter:brightness(1.18);transform:translateY(-3px);}
 
 footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
 .fb{font-family:'Cinzel Decorative',serif;font-size:.95rem;background:linear-gradient(90deg,var(--gold),var(--electric));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.fc{font-size:.75rem;color:var(--muted);}
+.fc{font-size:.78rem;color:var(--muted);}
 
 /* MODAL */
 .modal{position:fixed;inset:0;z-index:2000;background:rgba(3,8,16,.96);backdrop-filter:blur(22px);display:none;align-items:center;justify-content:center;padding:30px;}
@@ -202,31 +314,39 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
 .mx{position:absolute;top:18px;right:24px;font-size:1.3rem;color:var(--muted);cursor:none;transition:color .3s;z-index:10;}
 .mx:hover{color:var(--gold);}
 .mtt{font-family:'Cinzel Decorative',serif;font-size:1.7rem;color:var(--gold);margin-bottom:8px;}
-.mme{font-size:.7rem;letter-spacing:3px;color:var(--electric);text-transform:uppercase;margin-bottom:18px;}
-.mde{font-size:.93rem;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+.mme{font-size:.72rem;letter-spacing:3px;color:var(--electric);text-transform:uppercase;margin-bottom:18px;}
+/* IMPROVED: modal description brighter */
+.mde{font-size:.97rem;color:var(--text2);line-height:1.9;margin-bottom:28px;}
 .msps{display:flex;gap:36px;margin-bottom:30px;}
-.msp label{font-size:.6rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:4px;}
+.msp label{font-size:.62rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:4px;}
 .msp span{font-size:1.1rem;font-weight:700;color:var(--text);}
 .mpb{font-size:1.5rem;font-weight:700;color:var(--teal);margin-bottom:24px;}
 .mbtns{display:flex;gap:12px;flex-wrap:wrap;}
 
 @media(max-width:1100px){.ggrid{grid-template-columns:repeat(2,1fr);}.ggrid .ac.hero-c2{grid-column:span 2;}.mbox{grid-template-columns:1fr;}.mic{min-height:250px;}}
-@media(max-width:900px){nav,nav.scrolled{padding:16px 28px;}.sp{padding:80px 28px;}.hero-c{padding:0 28px;}.hero-scroll,.hero-badge{display:none;}.about-w{grid-template-columns:1fr;gap:40px;}.pillars{grid-template-columns:1fr;}.jcols{grid-template-columns:1fr;}.cgrid{grid-template-columns:1fr;}footer{flex-direction:column;gap:12px;text-align:center;}.ctaband{padding:60px 28px;}}
-@media(max-width:600px){.nav-links,.nav-cta{display:none;}.ggrid{grid-template-columns:1fr;}.ggrid .ac.hero-c2,.ggrid .ac.wide-c{grid-column:span 1;}.ac.hero-c2 .ac-img{height:320px;}}
+@media(max-width:900px){nav,nav.scrolled{padding:14px 24px;}.sp{padding:80px 28px;}.hero-c{padding:0 28px;}.hero-scroll,.hero-badge{display:none;}.about-w{grid-template-columns:1fr;gap:40px;}.pillars{grid-template-columns:1fr;}.jcols{grid-template-columns:1fr;}.cgrid{grid-template-columns:1fr;}footer{flex-direction:column;gap:12px;text-align:center;}.ctaband{padding:60px 28px;}}
+@media(max-width:600px){.nav-links,.nav-cta{display:none;}.ggrid{grid-template-columns:1fr;}.ggrid .ac.hero-c2,.ggrid .ac.wide-c{grid-column:span 1;}.ac.hero-c2 .ac-img{height:320px;}.draw-grid{grid-template-columns:1fr;}.hist-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">
-    <span class="nav-brand-main">D.O.N ART</span>
-    <span class="nav-brand-sub">Design of Nerve Art</span>
+    <img src="images/logo.png" alt="DON ART" class="nav-logo-img"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="nav-brand-txt" style="display:none;">
+      <span class="nav-brand-main">D.O.N ART</span>
+      <span class="nav-brand-sub">Design of Nerve Art</span>
+    </div>
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#drawings">Drawings</a></li>
+    <li><a href="#arthistory">Art History</a></li>
     <li><a href="#concept">Concept</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -236,7 +356,7 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div><!-- images/artist-photo.jpg -->
+  <div class="hero-bg"></div>
   <div class="hero-ov"></div>
   <div class="hero-grid"></div>
   <div class="hero-c">
@@ -287,7 +407,7 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
       <div class="sr" style="margin:0 0 28px;"></div>
       <p class="aq">"My art is an abstract journey through the human nervous system, the scientific Law of Conservation of Energy, and the vast spectrum of human sensations."</p>
       <p class="ab">Rajeshwar Vivekanand Trimbake is the creator of D.O.N Art — Design Of Nerve Art — a unique style blending the spiritual, the scientific, and the sensual into vibrant, heavily-textured acrylic canvases. His work was developed under the guidance of Jayant Kadam, Vice Principal, College of Art, Satara.</p>
-      <p class="ab">With an M.F.A. in Painting and a Diploma from Sir J.J. School of Art (2023), Rajeshwar's DONART Style is carving a distinct identity within the realms of Modern and Contemporary Indian art. Inspired by the book "Joy of Sex" by Alex Comfort M.D. DSC.</p>
+      <p class="ab">With an M.F.A. in Painting and a Diploma from Sir J.J. School of Art (2023), Rajeshwar's DONART Style is carving a distinct identity within the realms of Modern and Contemporary Indian art.</p>
       <div class="stats">
         <div class="stat"><span class="n" data-target="15">0</span><span class="l">Years Active</span></div>
         <div class="stat"><span class="n" data-target="20">0</span><span class="l">Artworks</span></div>
@@ -298,21 +418,223 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
   </div>
 </div></section>
 
-<!-- GALLERY -->
+<!-- GALLERY — New hierarchical category system -->
 <section id="gallery" class="sec"><div class="sp">
   <div class="sh rv">
-    <div class="sl">Original Acrylic Paintings — For Sale</div>
+    <div class="sl">Original Works — For Sale</div>
     <h2 class="st">The Gallery</h2>
     <div class="sr"></div>
   </div>
-  <div class="gtabs rv">
-    <button class="tab on" data-f="all">All Works</button>
-    <button class="tab" data-f="featured">Featured</button>
-    <button class="tab" data-f="large">Large Format</button>
-    <button class="tab" data-f="small">Small Format</button>
-    <button class="tab" data-f="ink">Ink &amp; Paper</button>
+  <div class="gtabs-outer rv">
+    <div class="gtabs-parent" id="parentTabs">
+      <button class="tab-parent on" data-parent="all">All Works</button>
+      <button class="tab-parent" data-parent="composition">Composition</button>
+      <button class="tab-parent" data-parent="landscape">Landscape</button>
+      <button class="tab-parent" data-parent="portrait">Portrait</button>
+      <button class="tab-parent" data-parent="printmaking">Printmaking</button>
+      <button class="tab-parent" data-parent="sculpture">Sculpture</button>
+    </div>
+    <div class="gtabs-sub" id="subTabs"></div>
   </div>
   <div class="ggrid" id="ggrid"></div>
+</div></section>
+
+<!-- DRAWINGS SECTION -->
+<section id="drawings" class="sec"><div class="sp">
+  <div class="sh rv">
+    <div class="sl">Ink &amp; Charcoal Works</div>
+    <h2 class="st">Drawings</h2>
+    <div class="sr"></div>
+  </div>
+  <p class="rv" style="text-align:center;font-size:1rem;color:var(--text2);margin-bottom:50px;max-width:700px;margin-left:auto;margin-right:auto;line-height:2;">
+    A series of bold black-and-white drawings exploring the DONART visual language through ink and mixed media on paper — organic forms, spirals, and symbolic geometry rendered in dramatic monochrome.
+  </p>
+  <div class="draw-grid">
+    <!-- 11 drawings from DONART_.pdf -->
+    <div class="draw-card rv"><div style="position:relative;"><img src="images/drawing-01.jpg" alt="Drawing 1" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled I</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 01</div><div class="draw-title">Untitled I — Flowing Forms</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d1"><div style="position:relative;"><img src="images/drawing-02.jpg" alt="Drawing 2" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled II</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 02</div><div class="draw-title">Untitled II — Circular Motion</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d2"><div style="position:relative;"><img src="images/drawing-03.jpg" alt="Drawing 3" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled III</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 03</div><div class="draw-title">Untitled III — Convergence</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d3"><div style="position:relative;"><img src="images/drawing-04.jpg" alt="Drawing 4" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled IV</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 04</div><div class="draw-title">Untitled IV — Dual Circles</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv"><div style="position:relative;"><img src="images/drawing-05.jpg" alt="Drawing 5" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled V</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 05</div><div class="draw-title">Untitled V — The Form</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d1"><div style="position:relative;"><img src="images/drawing-06.jpg" alt="Drawing 6" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled VI</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 06</div><div class="draw-title">Untitled VI — Falling</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d2"><div style="position:relative;"><img src="images/drawing-07.jpg" alt="Drawing 7" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled VII</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 07</div><div class="draw-title">Untitled VII — Organic Cluster</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d3"><div style="position:relative;"><img src="images/drawing-08.jpg" alt="Drawing 8" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled VIII</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 08</div><div class="draw-title">Untitled VIII — Gold &amp; Black</div><div class="draw-med">Ink, Gold Leaf &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv"><div style="position:relative;"><img src="images/drawing-09.jpg" alt="Drawing 9" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled IX</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 09</div><div class="draw-title">Untitled IX — Heart Forms</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d1"><div style="position:relative;"><img src="images/drawing-10.jpg" alt="Drawing 10" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled X</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 10</div><div class="draw-title">Untitled X — Balance</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+    <div class="draw-card rv d2"><div style="position:relative;"><img src="images/drawing-11.jpg" alt="Drawing 11" class="draw-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="draw-fb">✏️</div><div class="draw-hov"><div class="draw-hov-t">Untitled XI</div><div class="draw-hov-m">Ink &amp; Mixed Media on Paper</div></div></div><div class="draw-info"><div class="draw-num">Drawing 11</div><div class="draw-title">Untitled XI — The Spine</div><div class="draw-med">Ink &amp; Mixed Media on Paper</div></div></div>
+  </div>
+</div></section>
+
+<!-- HISTORY OF ART COLLECTION -->
+<section id="arthistory" class="sec"><div class="sp">
+  <div class="sh rv">
+    <div class="sl">Knowledge &amp; Context</div>
+    <h2 class="st">History of Art</h2>
+    <div class="sr"></div>
+  </div>
+  <div class="hist-intro rv">
+    <p>Understanding the great movements of art history helps illuminate what makes DON ART unique. Rajeshwar's work sits at the intersection of Abstract Expressionism, Symbolism, and a deeply personal Indian spiritual philosophy — here is the context that frames his practice.</p>
+  </div>
+  <div class="hist-tabs rv">
+    <button class="htab on" data-h="all">All</button>
+    <button class="htab" data-h="fauvism">Fauvism</button>
+    <button class="htab" data-h="gauguin">Gauguin</button>
+    <button class="htab" data-h="impressionism">Impressionism</button>
+    <button class="htab" data-h="abstract">Abstract Art</button>
+    <button class="htab" data-h="technique">Technique</button>
+  </div>
+  <div class="hist-grid" id="histGrid">
+
+    <!-- CARD 1: Matisse -->
+    <div class="hist-card rv" data-h="fauvism">
+      <div class="hist-card-tag">Fauvism · Color Theory</div>
+      <div class="hist-card-title">Henri Matisse: The Master of Color</div>
+      <div class="hist-card-body">
+        <p>Matisse was one of the most influential French artists of the 20th century, renowned for his revolutionary use of color and as the founding father of the Fauvism movement.</p>
+        <p>In 1889, while recovering from illness, his mother gave him painting supplies — and he discovered his life's calling. Around 1905, he and his colleagues exhibited paintings of bold, vibrant colors. A critic labeled them <em>"Les Fauves"</em> (The Wild Beasts), naming the movement.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Key Works</h4>
+          <p><strong style="color:var(--gold)">Woman with a Hat (1905)</strong> — caused a sensation in the art world. <strong style="color:var(--gold)">The Dance (1910)</strong> — iconic, representing energy and rhythm of life. <strong style="color:var(--gold)">The Red Studio (1911)</strong> — exceptional bold use of color.</p>
+          <h4>Final Years — Cut-outs</h4>
+          <p>In his final years, unable to paint due to declining health, Matisse adopted the 'Gouache Découpé' technique — cutting shapes from colored paper. His 'Blue Nudes' series emerged from this practice. He described it as <em>"drawing with scissors"</em> or <em>"carving directly into color."</em></p>
+          <h4>Legacy</h4>
+          <p>Matisse believed art should provide peace and comfort to the mind. He passed away on November 3, 1954, in Nice, France, having changed the way we perceive modern art.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Gauguin -->
+    <div class="hist-card rv d1" data-h="gauguin">
+      <div class="hist-card-tag">Post-Impressionism · Symbolism</div>
+      <div class="hist-card-title">Paul Gauguin: Pioneer of Symbolism</div>
+      <div class="hist-card-body">
+        <p>Gauguin was a renowned French Post-Impressionist known for profound contributions to modern art. His use of color and symbolic style profoundly influenced Picasso and Matisse. Born June 7, 1848 in Paris, he spent his early childhood in Peru — which left a lasting impact on his artistic vision.</p>
+        <p>In the early 1880s, following a stock market crash, he left his job to focus entirely on painting, eventually traveling to Tahiti seeking a "pure" and simple life.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Journey to Tahiti</h4>
+          <p>In Tahiti he began using bold colors, flat shapes, and heavy symbolism. His most celebrated masterpiece — <strong style="color:var(--gold)">"Where Do We Come From? What Are We? Where Are We Going?"</strong> — explores the deep meaning of life and existence.</p>
+          <h4>Van Gogh Relationship</h4>
+          <p>In 1888, Gauguin and Van Gogh worked together in Arles, France. Intense ideological differences led to a legendary falling out — just before Van Gogh famously cut off his ear.</p>
+          <h4>Key Characteristics</h4>
+          <p><strong style="color:var(--teal)">Symbolism</strong> — he painted what he felt, not what he saw. <strong style="color:var(--teal)">Primitivism</strong> — prioritized non-Western cultures and folk art. <strong style="color:var(--teal)">Bold Colors</strong> — manipulated nature's colors for his own imaginative needs. He passed away May 8, 1903, now considered one of the greatest pillars of modern art.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Art Movements Comparison -->
+    <div class="hist-card rv d2" data-h="fauvism">
+      <div class="hist-card-tag">Comparative Study</div>
+      <div class="hist-card-title">Fauvism, Pointillism &amp; Synthetism</div>
+      <div class="hist-card-body">
+        <p>The pivotal movements associated with masters like Matisse and Gauguin each approached the canvas with radically different philosophies. Understanding them reveals the depth of modern art's evolution.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>The Three Movements</h4>
+          <p><strong style="color:var(--gold)">Fauvism</strong> — 'Fauve' means 'Wild Beast.' Artists used colors aggressively and vibrantly — painting clouds red or faces green. Goal: express emotions through the sheer power of color. Key artist: Henri Matisse.</p>
+          <p><strong style="color:var(--gold)">Pointillism</strong> — instead of brushstrokes, artists use thousands of tiny colored dots. From a distance, your eyes blend the dots into unified color. Rooted in the science of color perception. Key artist: Georges Seurat.</p>
+          <p><strong style="color:var(--gold)">Synthetism (Gauguin)</strong> — large, flat areas of bold color separated by dark, heavy outlines. A "synthesis" of the artist's memory and feelings rather than a literal copy of the scene.</p>
+        </div>
+        <table class="art-table">
+          <tr><th>Style</th><th>Main Element</th><th>Visual Impact</th></tr>
+          <tr><td>Fauvism</td><td>Wild, vibrant colors</td><td>Excitement &amp; Energy</td></tr>
+          <tr><td>Pointillism</td><td>Small distinct dots</td><td>Stillness &amp; Precision</td></tr>
+          <tr><td>Symbolism</td><td>Flat colors &amp; symbols</td><td>Mystery &amp; Spirituality</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- CARD 4: Color Language -->
+    <div class="hist-card rv" data-h="fauvism">
+      <div class="hist-card-tag">Color Psychology</div>
+      <div class="hist-card-title">The Language of Color</div>
+      <div class="hist-card-body">
+        <p>Artists like Matisse and Gauguin treated color not just as decoration, but as a primary language. Matisse believed color should not be a slave to the actual color of an object — it should liberate emotion.</p>
+        <p>Gauguin chose colors that were heavier and more mysterious — deep golden yellows, terracotta reds, and dark greens reflecting the nature of Tahiti. He would paint grass pink or the sky yellow to create a dreamlike, otherworldly effect.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Color Temperature in DON ART</h4>
+          <p><strong style="color:#ff7f50">Warm Colors (Red, Yellow, Orange)</strong> — pop forward, grab attention, provide energy. In DONART, warm colors represent the enthusiastic energy of Pranay (romantic emotion).</p>
+          <p><strong style="color:#5fd8f0">Cool Colors (Blue, Green, Purple)</strong> — recede into distance, create depth and calm. In DONART, cool colors represent the tranquility after energy transformation.</p>
+          <h4>Texture &amp; Light</h4>
+          <p>Using the Impasto technique with heavy acrylic, light hits the ridges of texture and creates its own shadows. This causes colors to appear different at various times of day — the painting is alive.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5: Impressionism -->
+    <div class="hist-card rv d1" data-h="impressionism">
+      <div class="hist-card-tag">Impressionism · 19th Century</div>
+      <div class="hist-card-title">Impressionism: Capturing the Fleeting Moment</div>
+      <div class="hist-card-body">
+        <p>Impressionism began in France in the late 19th century. The goal was not to create a photographic imitation of a scene, but to convey how light and atmosphere <em>felt</em> at a specific instant.</p>
+        <p>Artists painted the same cathedral or haystack at different times of day — morning, noon, evening — to capture the changing effects of light.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Key Techniques</h4>
+          <p><strong style="color:var(--gold)">Short Brushstrokes</strong> — small "dabs" of paint that look unfinished close up, but form a vibrant image from a distance. <strong style="color:var(--gold)">En Plein Air</strong> — painting outdoors to capture true light. <strong style="color:var(--gold)">No Black</strong> — even shadows use deep blues or purples.</p>
+          <h4>Leading Artists</h4>
+          <p><strong style="color:var(--teal)">Claude Monet</strong> — father of Impressionism; his painting "Impression, Sunrise" named the movement. <strong style="color:var(--teal)">Pierre-Auguste Renoir</strong> — vibrant social scenes. <strong style="color:var(--teal)">Edgar Degas</strong> — ballet dancers and horses.</p>
+          <h4>Post-Impressionism</h4>
+          <p>Impressionism focused on the external world — light and visual scene. Post-Impressionism (Gauguin, Van Gogh) turned inward toward emotions, symbols, and structured forms.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6: Abstract Art -->
+    <div class="hist-card rv d2" data-h="abstract">
+      <div class="hist-card-tag">Modern Abstract Art</div>
+      <div class="hist-card-title">Abstract Art: The Language of Ideas</div>
+      <div class="hist-card-body">
+        <p>Modern Abstract Art does not depict the world as it appears to the eye — it reveals it through ideas, energy, and emotions. By stripping away the identity of objects, it focuses entirely on colors, lines, and shapes.</p>
+        <p><strong style="color:var(--gold)">Wassily Kandinsky</strong> — considered the first purely abstract artist. He believed that, like music, colors possess a spiritual impact that does not require an object to be understood.</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Major Sub-Styles</h4>
+          <p><strong style="color:var(--gold)">Action Painting</strong> — the physical movement of the artist is crucial. Jackson Pollock created masterpieces by dripping and splashing paint — a reflection of internal energy.</p>
+          <p><strong style="color:var(--gold)">Color Field Painting</strong> — large, flat areas of color immerse the viewer in depth of hue (Mark Rothko).</p>
+          <p><strong style="color:var(--gold)">Geometric Abstraction</strong> — precise use of squares, circles and lines focusing on balance and mathematical beauty.</p>
+          <h4>DON ART Connection</h4>
+          <p>Many modern abstract artists connect their work to <em>"neurological energy"</em> and biology — exploring philosophies that link the nervous system to artistic expression. This is precisely the foundation of the DONART Style.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Technique -->
+    <div class="hist-card rv" data-h="technique">
+      <div class="hist-card-tag">Mastering Technique</div>
+      <div class="hist-card-title">Impasto, Texture &amp; Symbolism</div>
+      <div class="hist-card-body">
+        <p>The great techniques of art history directly inform the DONART style. Understanding these methods provides a deeper perspective on how art is conceived and created.</p>
+        <p><strong style="color:var(--gold)">Impasto</strong> — paint applied in very thick layers. Brush or palette knife marks remain visible, creating a 3D effect. Van Gogh famously used this in 'The Starry Night.'</p>
+      </div>
+      <button class="hist-read-more" onclick="toggleHist(this)">Read More ↓</button>
+      <div class="hist-card-full">
+        <div class="hist-card-body">
+          <h4>Symbolism</h4>
+          <p>Gauguin was a master of symbolism — the artist depicts not what is seen, but what is felt. Colors represent specific moods or spiritual meanings. In DONART, yellow might represent the vitality of the lingam, while blue represents the spinal cord and cool Pranay energy.</p>
+          <h4>Contemporary Abstract Art</h4>
+          <p>Modern artists use colors and shapes not to represent a specific object, but to express pure energy and ideas. The use of heavy textures and Heavy Body Acrylics has become central to contemporary abstract practice — and is the primary medium of Rajeshwar Trimbake.</p>
+          <h4>In DON ART</h4>
+          <p>The interplay of light and shadow, brushing techniques, the illusion created through complex color patterns, and the visible texture are the soul and fundamental core — the precision — of the DONART paintings.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div></section>
 
 <!-- CONCEPT -->
@@ -322,9 +644,9 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
   <div class="cpt-w">
     <blockquote class="cq rv">Nature is the creation of energy. Energy is never destroyed; it is only transformed. Man is a confluence of the five basic elements — Panchamahabhutas. The various experiments of lovemaking (Kam-kriya) and the sensual aspects of man and woman have been depicted through a specific ornamental form, creating the DONART Style.</blockquote>
     <div class="pillars">
-      <div class="pill rv d1"><div class="p-ico">🧠</div><div class="p-t">Nervous System</div><p class="p-b">Every brushstroke maps the neural pathways of human emotion. The brain and the body are united through what the artist calls "Pranay" — the exchange of emotion through the nervous system.</p></div>
-      <div class="pill rv d2"><div class="p-ico">⚡</div><div class="p-t">Energy &amp; Color</div><p class="p-b">The contact between warm and cool colors from the color wheel represents "chromatic lovemaking" — rangatmak pranay kriya — energy transforming into art on the canvas.</p></div>
-      <div class="pill rv d3"><div class="p-ico">🌸</div><div class="p-t">Ornamental Form</div><p class="p-b">The crown (Mukut) on the woman's head, breasts depicted as ovaries, symbolic arrows — every element carries layered biological and spiritual meaning in the DONART language.</p></div>
+      <div class="pill rv d1"><div class="p-ico">🧠</div><div class="p-t">Nervous System</div><p class="p-b">Every brushstroke maps the neural pathways of human emotion. The brain and the body are united through what the artist calls "Pranay" — the exchange of emotion through the nervous system — from head through neck down the spine.</p></div>
+      <div class="pill rv d2"><div class="p-ico">⚡</div><div class="p-t">Energy &amp; Color</div><p class="p-b">The contact between warm and cool colors from the color wheel represents "chromatic lovemaking" — rangatmak pranay kriya — energy transforming into art on the canvas. Bright colors meet tranquil blues in every composition.</p></div>
+      <div class="pill rv d3"><div class="p-ico">🌸</div><div class="p-t">Ornamental Form</div><p class="p-b">The crown (Mukut) on the woman's head represents the glans. Breasts are depicted as ovaries. Symbolic arrows and sacred geometry carry layered biological and spiritual meaning in the DONART visual language.</p></div>
     </div>
   </div>
 </div></section>
@@ -336,17 +658,17 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
     <div class="rv">
       <h3>Education</h3>
       <div class="tl"><div class="tl-y">2008 – 2012</div><div class="tl-t">G.D. Art Diploma — Drawing &amp; Painting</div><div class="tl-d">Foundation in classical techniques, drawing and painting. Five consecutive Annual Exhibitions at Satara Kala Mahavidyalaya.</div></div>
-      <div class="tl"><div class="tl-y">2018</div><div class="tl-t">B.F.A. — Drawing &amp; Painting</div><div class="tl-d">Bachelor of Fine Arts. Annual exhibition at BAMU University, Aurangabad, Dept. of Fine Arts.</div></div>
-      <div class="tl"><div class="tl-y">2021</div><div class="tl-t">M.F.A. — Painting</div><div class="tl-d">Master of Fine Arts — the DON ART conceptual framework fully crystallised. Annual show at Sir J.J. School of Art.</div></div>
-      <div class="tl"><div class="tl-y">2023</div><div class="tl-t">Dip.A.Ead — Sir J.J. School of Art, Mumbai</div><div class="tl-d">Advanced diploma from the most prestigious art institution in India. Three consecutive annual exhibitions (2021, 2022, 2023).</div></div>
+      <div class="tl"><div class="tl-y">2018</div><div class="tl-t">B.F.A. — Drawing &amp; Painting</div><div class="tl-d">Bachelor of Fine Arts. Annual exhibition at BAMU University, Aurangabad, Department of Fine Arts.</div></div>
+      <div class="tl"><div class="tl-y">2021</div><div class="tl-t">M.F.A. — Painting</div><div class="tl-d">Master of Fine Arts — the DON ART conceptual framework fully crystallised. Annual shows at Sir J.J. School of Art.</div></div>
+      <div class="tl"><div class="tl-y">2023</div><div class="tl-t">Dip.A.Ead — Sir J.J. School of Art, Mumbai</div><div class="tl-d">Advanced diploma from the most prestigious art school in India. Three consecutive annual exhibitions (2021, 2022, 2023).</div></div>
     </div>
     <div class="rv d2">
       <h3>Professional Experience</h3>
       <div class="tl"><div class="tl-y">2010</div><div class="tl-t">Hospital &amp; Architectural Murals</div><div class="tl-d">Satara Hospital (Children's Ward) wall painting; interior pillar painting; building exterior projects across Maharashtra.</div></div>
-      <div class="tl"><div class="tl-y">2011 – 2013</div><div class="tl-t">Assistant to Master Sculptors</div><div class="tl-d">Assisted Valay Shende, Ravi Kumbhar, Sanjay Kumbhar, Sanjay Sawant and Sagar Gaikwad — all professional sculptural artists.</div></div>
-      <div class="tl"><div class="tl-y">2013 – 2015</div><div class="tl-t">Film &amp; Media Industry, Mumbai</div><div class="tl-d">Bollywood film "DADDY" (Asst. Art Director, Versova Beach); Bhojpuri music video (SL Studio, Trombay); Film City Magazine photography installation; Hotstar ad miniature artist for "Skill Tool" Co.</div></div>
-      <div class="tl"><div class="tl-y">2016 – 2017</div><div class="tl-t">Marathi Film "TENDLIA"</div><div class="tl-d">Assistant Art Director for the Marathi film TENDLIA, shot in Islampur. Under Art Director Dev Ji Dada.</div></div>
-      <div class="tl"><div class="tl-y">2019 🏆</div><div class="tl-t">First Prize — Kalagiri, Kasauli, HP</div><div class="tl-d">Won First Prize at the Kalagiri Art Workshop &amp; Competition, Kasauli, Himachal Pradesh. National recognition.</div></div>
+      <div class="tl"><div class="tl-y">2011 – 2013</div><div class="tl-t">Assistant to Master Sculptors</div><div class="tl-d">Assisted Valay Shende, Ravi Kumbhar, Sanjay Kumbhar, Sanjay Sawant and Sagar Gaikwad — professional sculptural artists.</div></div>
+      <div class="tl"><div class="tl-y">2013 – 2015</div><div class="tl-t">Film &amp; Media Industry, Mumbai</div><div class="tl-d">Bollywood "DADDY" (Asst. Art Director, Versova); Bhojpuri music video (SL Studio); Film City installations; Hotstar ad miniature artist.</div></div>
+      <div class="tl"><div class="tl-y">2016 – 2017</div><div class="tl-t">Marathi Film "TENDLIA"</div><div class="tl-d">Assistant Art Director, shot in Islampur, under Art Director Dev Ji Dada.</div></div>
+      <div class="tl"><div class="tl-y">2019 🏆</div><div class="tl-t">First Prize — Kalagiri, Kasauli, HP</div><div class="tl-d">Won First Prize at the Kalagiri Art Workshop &amp; Competition, Himachal Pradesh. National recognition.</div></div>
       <div class="tl"><div class="tl-y">2020</div><div class="tl-t">Government Street Art — Bhusawal</div><div class="tl-d">Government commissioned street art and wall painting project in Bhusawal, Maharashtra.</div></div>
     </div>
   </div>
@@ -356,14 +678,14 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
 <section id="ach" class="sec"><div class="sp">
   <div class="sh rv"><div class="sl">Exhibitions &amp; Group Shows</div><h2 class="st">Exhibitions</h2><div class="sr"></div></div>
   <div class="agrid">
-    <div class="acard2 rv"><div class="ay">2010</div><div class="att">Ratnakar Art Gallery, Kolhapur</div><div class="ad">Selected Group Show, July 11–17. Early Kolhapur debut establishing Rajeshwar's presence in Maharashtra's art circuit.</div></div>
-    <div class="acard2 rv d1"><div class="ay">2010</div><div class="att">Petit Art Today Gallery, Pune</div><div class="ad">Selected Group Show, November 23–29. Prestigious Pune gallery exposure alongside established artists.</div></div>
-    <div class="acard2 rv d2"><div class="ay">2010</div><div class="att">Art Today Gallery, Pune</div><div class="ad">Two shows: December 9–15, 2010 and January 18–24, 2012. Consecutive presence at Pune's premier contemporary venue.</div></div>
-    <div class="acard2 rv d3"><div class="ay">2018</div><div class="att">BAMU University Annual Exhibition</div><div class="ad">Annual Art Exhibition, BAMU University, Aurangabad — Department of Fine Arts academic showcase.</div></div>
-    <div class="acard2 rv"><div class="ay">2019 🏆</div><div class="att">Kalagiri Art Workshop — FIRST PRIZE</div><div class="ad">Won First Prize at Kalagiri Art Workshop &amp; Competition, Kasauli, Himachal Pradesh. National-level recognition.</div></div>
-    <div class="acard2 rv d1"><div class="ay">2021–23</div><div class="att">Sir J.J. School of Art Annual</div><div class="ad">Annual Art Exhibitions for three consecutive years at the most iconic art school in India, Mumbai.</div></div>
-    <div class="acard2 rv d2"><div class="ay">2008–12</div><div class="att">Satara Kala Mahavidyalaya</div><div class="ad">Annual Exhibitions for five consecutive years — a consistent foundation of academic artistic excellence.</div></div>
-    <div class="acard2 rv d3"><div class="ay">2008–12</div><div class="att">Kalapushpa Workshops</div><div class="ad">Kolhapur (2012), Mahabaleshwar (2011), Sangli &amp; Kolhapur (2010), Vai Satara (2008). Gulmohar Day, Satara (2009–12).</div></div>
+    <div class="acard2 rv"><div class="ay">2010</div><div class="att">Ratnakar Art Gallery, Kolhapur</div><div class="ad">Selected Group Show, July 11–17.</div></div>
+    <div class="acard2 rv d1"><div class="ay">2010</div><div class="att">Petit Art Today Gallery, Pune</div><div class="ad">Selected Group Show, November 23–29.</div></div>
+    <div class="acard2 rv d2"><div class="ay">2010–12</div><div class="att">Art Today Gallery, Pune</div><div class="ad">Dec 9–15, 2010 and Jan 18–24, 2012. Two consecutive group shows.</div></div>
+    <div class="acard2 rv d3"><div class="ay">2018</div><div class="att">BAMU University Annual Exhibition</div><div class="ad">Aurangabad — Department of Fine Arts.</div></div>
+    <div class="acard2 rv"><div class="ay">2019 🏆</div><div class="att">Kalagiri — FIRST PRIZE</div><div class="ad">Kalagiri Art Workshop &amp; Competition, Kasauli, Himachal Pradesh. National-level recognition.</div></div>
+    <div class="acard2 rv d1"><div class="ay">2021–23</div><div class="att">Sir J.J. School of Art Annual</div><div class="ad">Annual exhibitions for three consecutive years at the most iconic art school in India.</div></div>
+    <div class="acard2 rv d2"><div class="ay">2008–12</div><div class="att">Satara Kala Mahavidyalaya</div><div class="ad">Annual Exhibitions for five consecutive years.</div></div>
+    <div class="acard2 rv d3"><div class="ay">2008–12</div><div class="att">Kalapushpa Workshops</div><div class="ad">Kolhapur, Mahabaleshwar, Sangli, Vai Satara. Gulmohar Day, Satara (2009–12).</div></div>
   </div>
 </div></section>
 
@@ -410,101 +732,143 @@ footer{padding:28px 70px;background:var(--dark2);border-top:1px solid var(--bord
 <div class="modal" id="modal">
   <div class="mbox">
     <span class="mx" id="mclose">✕</span>
-    <div class="mic">
-      <img src="" alt="" class="mi" id="mimg">
-      <div class="mif" id="mfb"></div>
-    </div>
+    <div class="mic"><img src="" alt="" class="mi" id="mimg"><div class="mif" id="mfb"></div></div>
     <div class="mtc">
       <div class="mtt" id="mtt"></div>
       <div class="mme" id="mme"></div>
       <p class="mde" id="mde"></p>
-      <div class="msps">
-        <div class="msp"><label>Size</label><span id="msz"></span></div>
-        <div class="msp"><label>Category</label><span id="mct"></span></div>
-      </div>
+      <div class="msps"><div class="msp"><label>Size</label><span id="msz"></span></div><div class="msp"><label>Category</label><span id="mct"></span></div></div>
       <div class="mpb" id="mpr"></div>
-      <div class="mbtns">
-        <button class="bsm bsm-g" onclick="enquire()">Enquire Now</button>
-        <button class="bsm bsm-o" onclick="closeModal()">Close</button>
-      </div>
+      <div class="mbtns"><button class="bsm bsm-g" onclick="enquire()">Enquire Now</button><button class="bsm bsm-o" onclick="closeModal()">Close</button></div>
     </div>
   </div>
 </div>
 
 <script>
 /* ================================================================
-   IMAGE NAMING GUIDE
-   Create a folder called "images" next to this HTML file.
-   Add these files (JPG or PNG, any resolution):
+   GALLERY CATEGORY STRUCTURE
+   parent       sub               Description
+   -------      ---               -----------
+   composition  pictorial         Pictorial composition
+                semi-abstract     Semi abstract
+                abstract          Abstract
+                mix-media         Mix media
+   landscape    creative          Creative landscape
+                abstract-l        Abstract landscape
+                realistic         Realistic landscape
+   portrait     calicutcher       Calicutcher
+                sketch            Sketch
+                color-sketch      Colors sketch
+                creative-p        Creative portrait
+                realistic-p       Realistic composition
+   printmaking  (no sub)
+   sculpture    creative-s        Creative sculpture
+                installation      Installation
+                realistic-s       Realistic sculpture
+                series            Series
+================================================================ */
 
-   artist-photo.jpg      Rajeshwar's portrait photo  ← HERO BACKGROUND
-   painting-01.jpg       Me And Nature            (36×31)
-   painting-02.jpg       My Village               (36×24 diptych)
-   painting-03.jpg       Dream Girl               (36×30)
-   painting-04.jpg       Good Morning             (36×24)
-   painting-05.jpg       God                      (36×36)
-   painting-06.jpg       Spiritual                (36×31)
-   painting-07.jpg       Mashroom                 (36×36)
-   painting-08.jpg       My Corners               (36×36)
-   painting-09.jpg       Milk Factory             (36×36)
-   painting-10.jpg       Kurukshetra              (31×24)
-   painting-11.jpg       Human Is An Animal       (12×12)
-   painting-12.jpg       Ticket                   (15×13)
-   painting-13.jpg       Eye Heart                (15×13)
-   painting-14.jpg       Donart Symbol            (15×13)
-   painting-15.jpg       Cause Of Pregnancy       (12×12)
-   painting-16.jpg       Mr Brain                 (12×12)
-   painting-17.jpg       Snail                    (36×30)
-   painting-18.jpg       My Thought Is Pregnant   (36×30)
-   painting-19.jpg       Women                    (36×36)
-   painting-20.jpg       Dancing Sperm            (24×12)
-   ink-drawings.jpg      Ink on Paper works collage (page 33-34 of PDF)
-   earlier-works.jpg     Earlier works collage    (pages 35-37 of PDF)
-   ================================================================ */
+const SUBS = {
+  composition: ['Pictorial','Semi Abstract','Abstract','Mix Media'],
+  landscape:   ['Creative','Abstract','Realistic'],
+  portrait:    ['Calicutcher','Sketch','Colors Sketch','Creative Portrait','Realistic Composition'],
+  printmaking: [],
+  sculpture:   ['Creative','Installation','Realistic','Series']
+};
 
+const SUB_KEYS = {
+  composition: ['pictorial','semi-abstract','abstract','mix-media'],
+  landscape:   ['creative','abstract-l','realistic'],
+  portrait:    ['calicutcher','sketch','color-sketch','creative-p','realistic-p'],
+  printmaking: [],
+  sculpture:   ['creative-s','installation','realistic-s','series']
+};
+
+/* ============================================================
+   ARTWORK DATA
+   Add more artworks by copying a block and changing values.
+   cat = parent category key (composition/landscape/portrait/printmaking/sculpture)
+   sub = sub-category key from SUB_KEYS above
+   img = images/painting-XX.jpg  (add your image files)
+   ============================================================ */
 const ART = [
-  {id:1,  title:"Me And Nature",           med:"Acrylic On Canvas", sz:"36×31 in", price:"₹50,000",   cat:"large",    tag:"ta", hero:true,  img:"images/painting-01.jpg.jpg", em:"🌿", desc:"A vibrant exploration of the human form and nature, rendered in brilliant greens, blues and reds. Organic, climbing forms interweave with lotus flowers in this signature DONART composition."},
-  {id:2,  title:"My Village",              med:"Acrylic On Canvas", sz:"36×24 in", price:"₹50,700",   cat:"large",    tag:"ta", wide:true,  img:"images/painting-02.jpg.jpg", em:"🏘️", desc:"A diptych celebrating rural Indian life. Pale, textured figures of women and animals emerge against a richly patterned background in muted earth tones and teals."},
-  {id:3,  title:"Dream Girl",              med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,50,000", cat:"featured", tag:"tf",             img:"images/painting-03.jpg.jpg", em:"💙", desc:"Bold blues and purples. Rounded organic forms suggest the ornamental female form — the crown (Mukut) at the apex represents the glans. A deeply symbolic DONART work."},
-  {id:4,  title:"Good Morning",            med:"Acrylic On Canvas", sz:"36×24 in", price:"₹60,000",   cat:"large",    tag:"ta",             img:"images/painting-04.jpg.jpg", em:"🌅", desc:"Warm and cool colors sweep in curves — a celebration of dawn, renewal, and the daily transformation of energy. Minimal forms with maximum emotional resonance."},
-  {id:5,  title:"God",                     med:"Acrylic On Canvas", sz:"36×36 in", price:"₹80,000",   cat:"featured", tag:"tf", hero:true,  img:"images/painting-05.jpg.jpg", em:"✨", desc:"Deep blues with glowing yellow irises and red circular forms. An abstract meditation on the divine, seen through the DONART lens of nervous system and cosmic energy."},
-  {id:6,  title:"Spiritual",               med:"Acrylic On Canvas", sz:"36×31 in", price:"₹80,000",   cat:"featured", tag:"tf",             img:"images/painting-06.jpg.jpg", em:"🕉️", desc:"A guitar-like form in earthy reds and greens, converging around a deep blue nucleus — a visual map of spiritual energy, sound, and the human nervous system."},
-  {id:7,  title:"Mashroom",                med:"Acrylic On Canvas", sz:"36×36 in", price:"₹70,000",   cat:"large",    tag:"ta",             img:"images/painting-07.jpg.jpg", em:"🍄", desc:"Bold, clean organic shapes in blue, green and crimson on a flat ground — a minimalist yet powerful exploration of natural form through symbolic DONART language."},
-  {id:8,  title:"My Corners",              med:"Acrylic On Canvas", sz:"36×36 in", price:"₹1,50,000", cat:"featured", tag:"tf", wide:true,  img:"images/painting-08.jpg.jpg", em:"🟡", desc:"Yellow and maroon planes intersect in a tense, compositionally daring piece. Exploring personal boundaries and the existential corners we inhabit."},
-  {id:9,  title:"Milk Factory",            med:"Acrylic On Canvas", sz:"36×36 in", price:"₹2,00,000", cat:"featured", tag:"tf", hero:true,  img:"images/painting-09.jpg.jpg", em:"🌾", desc:"Dark, rich tones with an emerald glow. Extraordinary textural depth exploring the body as a factory of creation, life, and sustenance."},
-  {id:10, title:"Kurukshetra",             med:"Acrylic On Canvas", sz:"31×24 in", price:"₹70,000",   cat:"large",    tag:"ta",             img:"images/painting-10.jpg.jpg", em:"⚔️", desc:"An orange serpentine form moves through dark earth, anchored by geometric grid squares in orange and green. Mythology and abstraction beautifully united."},
-  {id:11, title:"Human Is An Animal",     med:"Acrylic On Canvas", sz:"12×12 in", price:"₹35,000",   cat:"small",    tag:"ta",             img:"images/painting-11.jpg.jpg", em:"🦁", desc:"A confrontational small-format work in near-black dark tones. Directly challenging the viewer's self-perception through raw, primal imagery."},
-  {id:12, title:"Ticket",                  med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"small",    tag:"ta",             img:"images/painting-12.jpg.jpg", em:"🎫", desc:"A teal spiral with a flame-like figure descending into it — the ticket of admission to the cycle of existence and the spiral of the nervous system."},
-  {id:13, title:"Eye Heart",               med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"small",    tag:"ta",             img:"images/painting-13.jpg.jpg", em:"👁️", desc:"A large pink heart with a vivid eye at its centre. Seeing and feeling as one unified experience — the seat of emotion is also the window of perception."},
-  {id:14, title:"Donart Symbol",           med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"small",    tag:"ta",             img:"images/painting-14.jpg.jpg", em:"🔺", desc:"The iconic DON ART symbol — upward and downward arrows in maroon and blue, representing the dual energies of creation and the spinal pathway of emotion."},
-  {id:15, title:"Cause Of Pregnancy",     med:"Acrylic On Canvas", sz:"12×12 in", price:"₹50,000",   cat:"small",    tag:"ta",             img:"images/painting-15.jpg.jpg", em:"🌸", desc:"Pink and magenta organic forms on a white gold-textured ground. A direct and celebratory engagement with the biology of creation and new life."},
-  {id:16, title:"Mr Brain",               med:"Acrylic On Canvas", sz:"12×12 in", price:"₹50,000",   cat:"small",    tag:"ta",             img:"images/painting-16.jpg.jpg", em:"🧠", desc:"Magenta and cyan cerebral forms on white gold — a textured homage to the brain as the source of all art, all emotion, all existence."},
-  {id:17, title:"Snail",                   med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,00,000", cat:"large",    tag:"ta", wide:true,  img:"images/painting-17.jpg.jpg", em:"🐌", desc:"Simplified, bold forms in maroon, yellow and purple suggest a snail in contemplation — slowness, patience, and the inward spiral of energy."},
-  {id:18, title:"My Thought Is Pregnant", med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,50,000", cat:"featured", tag:"tf",             img:"images/painting-18.jpg.jpg", em:"💭", desc:"A foetal composition in bold greens and reds — ideas gestating, the birth of thought as a biological and spiritual process. An MFA-era masterwork."},
-  {id:19, title:"Women",                   med:"Acrylic On Canvas", sz:"36×36 in", price:"₹1,50,000", cat:"featured", tag:"tf", hero:true,  img:"images/painting-19.jpg.jpg", em:"♀️", desc:"Glowing teal and dark volcanic-textured forms fragment and reassemble the feminine form in the DONART ornamental tradition. Powerful and ceremonial."},
-  {id:20, title:"Dancing Sperm",           med:"Acrylic On Canvas", sz:"24×12 in", price:"₹30,000",   cat:"small",    tag:"ta",             img:"images/painting-20.jpg.jpg", em:"💃", desc:"Dynamic silver-blue and red forms dance across a dark canvas — the very beginning of life rendered in joyful, energetic abstraction."},
-  {id:21, title:"Ink Works on Paper",      med:"Ink on Paper", sz:"20×20 in each", price:"On Request", cat:"ink",     tag:"ta", wide:true,  img:"images/ink-drawings.jpg.jpg", em:"✒️", desc:"A collection of ink on paper works featuring symbolic DONART compositions — women, snails, spirals, arrows and geometric forms. Inquire for individual piece pricing."},
-  {id:22, title:"Earlier Works Collection",med:"Acrylic on Canvas", sz:"Various", price:"On Request", cat:"ink",      tag:"ta", wide:true,  img:"images/earlier-works.jpg.jpg", em:"🎨", desc:"A selection of earlier figurative and abstract works showing the evolution of the DONART style — rich colors, energetic compositions, and expressive figuration."},
+  {id:1,  title:"Me And Nature",           med:"Acrylic On Canvas", sz:"36×31 in", price:"₹50,000",   cat:"composition", sub:"abstract",    tag:"ta", hero:true, img:"images/painting-01.jpg", em:"🌿", desc:"A vibrant exploration of the human form and nature, rendered in brilliant greens, blues and reds. Organic, climbing forms interweave with lotus flowers in this signature DONART composition."},
+  {id:2,  title:"My Village",              med:"Acrylic On Canvas", sz:"36×24 in", price:"₹50,700",   cat:"composition", sub:"pictorial",   tag:"ta", wide:true, img:"images/painting-02.jpg", em:"🏘️", desc:"A diptych celebrating rural Indian life. Pale, textured figures of women and animals emerge against a richly patterned background."},
+  {id:3,  title:"Dream Girl",              med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,50,000", cat:"composition", sub:"abstract",    tag:"tf",           img:"images/painting-03.jpg", em:"💙", desc:"Bold blues and purples. Rounded organic forms suggest the ornamental female form — the crown (Mukut) at the apex represents the glans, a deeply symbolic DONART work."},
+  {id:4,  title:"Good Morning",            med:"Acrylic On Canvas", sz:"36×24 in", price:"₹60,000",   cat:"landscape",   sub:"abstract-l", tag:"ta",           img:"images/painting-04.jpg", em:"🌅", desc:"Warm and cool colors sweep in curves — a celebration of dawn, renewal, and the daily transformation of energy."},
+  {id:5,  title:"God",                     med:"Acrylic On Canvas", sz:"36×36 in", price:"₹80,000",   cat:"composition", sub:"abstract",   tag:"tf", hero:true, img:"images/painting-05.jpg", em:"✨", desc:"Deep blues with glowing yellow irises and red circular forms. An abstract meditation on the divine through the DONART nervous system lens."},
+  {id:6,  title:"Spiritual",               med:"Acrylic On Canvas", sz:"36×31 in", price:"₹80,000",   cat:"composition", sub:"semi-abstract",tag:"tf",          img:"images/painting-06.jpg", em:"🕉️", desc:"A guitar-like form in earthy reds and greens converging around a deep blue nucleus — a visual map of spiritual energy and the nervous system."},
+  {id:7,  title:"Mashroom",                med:"Acrylic On Canvas", sz:"36×36 in", price:"₹70,000",   cat:"landscape",   sub:"abstract-l", tag:"ta",           img:"images/painting-07.jpg", em:"🍄", desc:"Bold, clean organic shapes in blue, green and crimson — a minimalist yet powerful exploration of natural form through symbolic DONART language."},
+  {id:8,  title:"My Corners",              med:"Acrylic On Canvas", sz:"36×36 in", price:"₹1,50,000", cat:"composition", sub:"abstract",   tag:"tf", wide:true, img:"images/painting-08.jpg", em:"🟡", desc:"Yellow and maroon planes intersect in a tense, compositionally daring piece. Exploring personal boundaries and existential space."},
+  {id:9,  title:"Milk Factory",            med:"Acrylic On Canvas", sz:"36×36 in", price:"₹2,00,000", cat:"composition", sub:"abstract",   tag:"tf", hero:true, img:"images/painting-09.jpg", em:"🌾", desc:"Dark, rich tones with an emerald glow. Extraordinary textural depth — the body as a factory of creation, life, and sustenance."},
+  {id:10, title:"Kurukshetra",             med:"Acrylic On Canvas", sz:"31×24 in", price:"₹70,000",   cat:"composition", sub:"semi-abstract",tag:"ta",          img:"images/painting-10.jpg", em:"⚔️", desc:"An orange serpentine form moves through dark earth, anchored by geometric grid squares. Mythology and abstraction united."},
+  {id:11, title:"Human Is An Animal",     med:"Acrylic On Canvas", sz:"12×12 in", price:"₹35,000",   cat:"portrait",    sub:"creative-p", tag:"ta",           img:"images/painting-11.jpg", em:"🦁", desc:"A confrontational small-format work. Directly challenging the viewer's self-perception through raw, primal imagery."},
+  {id:12, title:"Ticket",                  med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"composition", sub:"abstract",   tag:"ta",           img:"images/painting-12.jpg", em:"🎫", desc:"A teal spiral with a flame-like figure — the ticket of admission to the cycle of existence and the spiral of the nervous system."},
+  {id:13, title:"Eye Heart",               med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"portrait",    sub:"creative-p", tag:"ta",           img:"images/painting-13.jpg", em:"👁️", desc:"A large pink heart with a vivid eye at its centre. Seeing and feeling as one unified experience."},
+  {id:14, title:"Donart Symbol",           med:"Acrylic On Canvas", sz:"15×13 in", price:"₹25,000",   cat:"composition", sub:"abstract",   tag:"ta",           img:"images/painting-14.jpg", em:"🔺", desc:"The iconic DON ART symbol — upward and downward arrows in maroon and blue, representing the dual energies of creation."},
+  {id:15, title:"Cause Of Pregnancy",     med:"Acrylic On Canvas", sz:"12×12 in", price:"₹50,000",   cat:"composition", sub:"abstract",   tag:"ta",           img:"images/painting-15.jpg", em:"🌸", desc:"Pink and magenta organic forms on a white gold-textured ground. A celebratory engagement with the biology of creation."},
+  {id:16, title:"Mr Brain",               med:"Acrylic On Canvas", sz:"12×12 in", price:"₹50,000",   cat:"composition", sub:"semi-abstract",tag:"ta",          img:"images/painting-16.jpg", em:"🧠", desc:"Magenta and cyan cerebral forms on white gold — a textured homage to the brain as the source of all art and emotion."},
+  {id:17, title:"Snail",                   med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,00,000", cat:"landscape",   sub:"creative",   tag:"ta", wide:true, img:"images/painting-17.jpg", em:"🐌", desc:"Simplified, bold forms in maroon, yellow and purple — slowness, patience, and the inward spiral of energy."},
+  {id:18, title:"My Thought Is Pregnant", med:"Acrylic On Canvas", sz:"36×30 in", price:"₹1,50,000", cat:"composition", sub:"abstract",   tag:"tf",           img:"images/painting-18.jpg", em:"💭", desc:"A foetal composition in bold greens and reds — ideas gestating, the birth of thought as a biological and spiritual process."},
+  {id:19, title:"Women",                   med:"Acrylic On Canvas", sz:"36×36 in", price:"₹1,50,000", cat:"portrait",    sub:"creative-p", tag:"tf", hero:true, img:"images/painting-19.jpg", em:"♀️", desc:"Glowing teal and dark volcanic-textured forms fragment and reassemble the feminine form in the DONART ornamental tradition."},
+  {id:20, title:"Dancing Sperm",           med:"Acrylic On Canvas", sz:"24×12 in", price:"₹30,000",   cat:"composition", sub:"abstract",   tag:"ta",           img:"images/painting-20.jpg", em:"💃", desc:"Dynamic silver-blue and red forms dance across a dark canvas — the very beginning of life in joyful abstraction."},
+  {id:21, title:"Ink Works on Paper",      med:"Ink on Paper",       sz:"20×20 in", price:"On Request",cat:"printmaking", sub:"",           tag:"ta", wide:true, img:"images/ink-drawings.jpg",em:"✒️", desc:"Ink on paper DONART compositions — women, snails, spirals, arrows and geometric forms. Inquire for individual piece pricing."},
+  {id:22, title:"Earlier Works",           med:"Acrylic on Canvas",  sz:"Various",  price:"On Request",cat:"composition", sub:"mix-media",  tag:"ta", wide:true, img:"images/earlier-works.jpg",em:"🎨",desc:"Earlier figurative and abstract works showing the evolution of the DONART style — rich colors and expressive figuration."},
 ];
 
-let cf = 'all', ca = null;
+let cf = 'all', csub = 'all', ca = null;
 
-function tagL(t){return t==='tf'?'FEATURED':'AVAILABLE';}
+/* ---------- Gallery tabs ---------- */
+function renderSubTabs(parent) {
+  const cont = document.getElementById('subTabs');
+  cont.innerHTML = '';
+  if (parent === 'all' || !SUBS[parent] || SUBS[parent].length === 0) return;
+  const allBtn = document.createElement('button');
+  allBtn.className = 'tab-sub on'; allBtn.textContent = 'All ' + parent.charAt(0).toUpperCase() + parent.slice(1);
+  allBtn.dataset.sub = 'all'; allBtn.addEventListener('click', () => subClick('all', cont));
+  cont.appendChild(allBtn);
+  SUBS[parent].forEach((label, i) => {
+    const b = document.createElement('button');
+    b.className = 'tab-sub'; b.textContent = label;
+    b.dataset.sub = SUB_KEYS[parent][i];
+    b.addEventListener('click', () => subClick(SUB_KEYS[parent][i], cont));
+    cont.appendChild(b);
+  });
+}
+function subClick(sub, cont) {
+  cont.querySelectorAll('.tab-sub').forEach(x => x.classList.remove('on'));
+  cont.querySelector(`[data-sub="${sub}"]`).classList.add('on');
+  csub = sub; buildG();
+}
+document.querySelectorAll('.tab-parent').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.tab-parent').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    cf = b.dataset.parent; csub = 'all';
+    renderSubTabs(cf); buildG();
+  });
+});
 
-function buildG(){
-  const g = document.getElementById('ggrid');
-  g.innerHTML='';
-  const list = cf==='all' ? ART : ART.filter(a=>a.cat===cf);
-  list.forEach((a,i)=>{
-    const cls = ['ac','rv'];
-    if(a.hero) cls.push('hero-c2');
-    else if(a.wide) cls.push('wide-c');
-    const ih = a.hero?'540px':a.wide?'290px':'260px';
+function tagL(t) { return t === 'tf' ? 'FEATURED' : 'AVAILABLE'; }
+
+function buildG() {
+  const g = document.getElementById('ggrid'); g.innerHTML = '';
+  let list = cf === 'all' ? ART : ART.filter(a => a.cat === cf);
+  if (csub !== 'all') list = list.filter(a => a.sub === csub);
+  if (list.length === 0) {
+    g.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted);font-size:1rem;letter-spacing:2px;">No artworks in this category yet — check back soon.</div>';
+    return;
+  }
+  list.forEach((a, i) => {
+    const cls = ['ac', 'rv'];
+    if (a.hero) cls.push('hero-c2'); else if (a.wide) cls.push('wide-c');
+    const ih = a.hero ? '540px' : a.wide ? '290px' : '260px';
     const d = document.createElement('div');
-    d.className = cls.join(' ');
-    d.style.transitionDelay = (i%4*.08)+'s';
-    d.innerHTML=`
+    d.className = cls.join(' '); d.style.transitionDelay = (i % 4 * 0.08) + 's';
+    const subLabel = a.sub ? a.sub.replace(/-./g, x => ' ' + x[1].toUpperCase()).replace(/^./, s => s.toUpperCase()) : '';
+    d.innerHTML = `
       <div class="atag ${a.tag}">${tagL(a.tag)}</div>
+      ${subLabel ? `<div class="ac-cat-pill">${subLabel}</div>` : ''}
       <div class="ac-iw" style="height:${ih}">
         <img src="${a.img}" alt="${a.title}" class="ac-img" style="height:${ih}"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -523,69 +887,83 @@ function buildG(){
         <div class="ac-row"><span class="ac-med">${a.med}</span><span class="ac-price">${a.price}</span></div>
         <div class="ac-size">${a.sz}</div>
       </div>`;
-    d.addEventListener('click',()=>openM(a.id));
+    d.addEventListener('click', () => openM(a.id));
     g.appendChild(d);
   });
-  setTimeout(initRv,80);
+  setTimeout(initRv, 80);
 }
 
-document.querySelectorAll('.tab').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on'); cf=b.dataset.f; buildG();
+/* ---------- Art History tabs ---------- */
+document.querySelectorAll('.htab').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.htab').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.h;
+    document.querySelectorAll('.hist-card').forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.h === f) ? 'block' : 'none';
+    });
   });
 });
 
-function openM(id){
-  const a=ART.find(x=>x.id===id); if(!a) return; ca=a;
-  const mi=document.getElementById('mimg');
-  mi.src=a.img; mi.alt=a.title; mi.style.display='block';
-  const mf=document.getElementById('mfb'); mf.style.display='none'; mf.textContent=a.em;
-  mi.onerror=()=>{mi.style.display='none';mf.style.display='flex';};
-  document.getElementById('mtt').textContent=a.title;
-  document.getElementById('mme').textContent=a.med;
-  document.getElementById('mde').textContent=a.desc;
-  document.getElementById('msz').textContent=a.sz;
-  document.getElementById('mct').textContent=a.cat.toUpperCase();
-  document.getElementById('mpr').textContent=a.price;
+function toggleHist(btn) {
+  const full = btn.nextElementSibling;
+  const open = full.classList.toggle('open');
+  btn.textContent = open ? 'Read Less ↑' : 'Read More ↓';
+}
+
+/* ---------- Modal ---------- */
+function openM(id) {
+  const a = ART.find(x => x.id === id); if (!a) return; ca = a;
+  const mi = document.getElementById('mimg');
+  mi.src = a.img; mi.alt = a.title; mi.style.display = 'block';
+  const mf = document.getElementById('mfb'); mf.style.display = 'none'; mf.textContent = a.em;
+  mi.onerror = () => { mi.style.display = 'none'; mf.style.display = 'flex'; };
+  document.getElementById('mtt').textContent = a.title;
+  document.getElementById('mme').textContent = a.med;
+  document.getElementById('mde').textContent = a.desc;
+  document.getElementById('msz').textContent = a.sz;
+  document.getElementById('mct').textContent = (a.cat + (a.sub ? ' · ' + a.sub : '')).toUpperCase();
+  document.getElementById('mpr').textContent = a.price;
   document.getElementById('modal').classList.add('on');
 }
-function closeModal(){document.getElementById('modal').classList.remove('on');}
-document.getElementById('mclose').onclick=closeModal;
-document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
-function enquire(){if(ca)enqA(ca.title);}
-function enqA(t){window.location.href=`mailto:donart.trimbake22@gmail.com?subject=Enquiry: ${encodeURIComponent(t)}&body=Hello Rajeshwar,%0A%0AI am interested in the artwork "${t}". Please share more details and availability.%0A%0AThank you.`;}
+function closeModal() { document.getElementById('modal').classList.remove('on'); }
+document.getElementById('mclose').onclick = closeModal;
+document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal(); });
+function enquire() { if (ca) enqA(ca.title); }
+function enqA(t) { window.location.href = `mailto:donart.trimbake22@gmail.com?subject=Enquiry: ${encodeURIComponent(t)}&body=Hello Rajeshwar,%0A%0AI am interested in the artwork "${t}". Please share more details and availability.%0A%0AThank you.`; }
 
-// Cursor
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-document.addEventListener('mousemove',e=>{
-  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
-  setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+/* ---------- Cursor ---------- */
+const cur = document.getElementById('cur'), ring = document.getElementById('cur-ring');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px';
+  setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
 });
-document.querySelectorAll('a,button,.ac,.cc,.acard2,.pill').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.4)';ring.style.width='56px';ring.style.height='56px';});
-  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='38px';ring.style.height='38px';});
+document.querySelectorAll('a,button,.ac,.draw-card,.hist-card,.cc,.acard2,.pill').forEach(el => {
+  el.addEventListener('mouseenter', () => { cur.style.transform = 'translate(-50%,-50%) scale(2.4)'; ring.style.width = '56px'; ring.style.height = '56px'; });
+  el.addEventListener('mouseleave', () => { cur.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '38px'; ring.style.height = '38px'; });
 });
 
-// Nav
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+/* ---------- Nav scroll ---------- */
+window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 60));
 
-// Reveal
-function initRv(){
-  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:.1});
-  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+/* ---------- Scroll reveal ---------- */
+function initRv() {
+  const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }); }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
 }
 
-// Counters
-function runC(){
-  document.querySelectorAll('.n[data-target]').forEach(el=>{
-    const t=+el.dataset.target; let v=0; const s=Math.ceil(t/40);
-    const timer=setInterval(()=>{v=Math.min(v+s,t);el.textContent=v+'+';if(v>=t)clearInterval(timer);},45);
+/* ---------- Counters ---------- */
+function runC() {
+  document.querySelectorAll('.n[data-target]').forEach(el => {
+    const t = +el.dataset.target; let v = 0;
+    const s = Math.ceil(t / 40);
+    const timer = setInterval(() => { v = Math.min(v + s, t); el.textContent = v + '+'; if (v >= t) clearInterval(timer); }, 45);
   });
 }
-const sObs=new IntersectionObserver(e=>{if(e[0].isIntersecting){runC();sObs.disconnect();}},{threshold:.5});
-const sEl=document.querySelector('.stats'); if(sEl) sObs.observe(sEl);
+const sObs = new IntersectionObserver(e => { if (e[0].isIntersecting) { runC(); sObs.disconnect(); } }, { threshold: .5 });
+const sEl = document.querySelector('.stats'); if (sEl) sObs.observe(sEl);
 
+/* ---------- Init ---------- */
 buildG(); initRv();
 </script>
 </body>
